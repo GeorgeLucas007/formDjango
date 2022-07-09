@@ -1,9 +1,12 @@
 from django.db import models
 
-class dadosPessoal:
-    primeiroNome = models.CharField(max_length=20)
-    ultimoNome = models.CharField(max_length=20)
+class dadosPessoal(models.Model):
+    primeiroNome = models.CharField('Nome', max_length=20)
+    ultimoNome = models.CharField('Sobrenome', max_length=20)
     nascimento = models.DateTimeField()
 
-    
+   
+
+    def __str__(self):
+        return self.primeiroNome
 
